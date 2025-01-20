@@ -15,6 +15,7 @@ import GoogleCast, {
 } from "react-native-google-cast";
 import { apiAtom, userAtom } from "@/providers/JellyfinProvider";
 import { RoundButton } from "./RoundButton";
+import { useRouter } from "expo-router";
 
 export function Chromecast({
   width = 48,
@@ -32,6 +33,8 @@ export function Chromecast({
   const user = useAtomValue(userAtom);
 
   const lastReportedProgressRef = useRef(0);
+
+  const router = useRouter();
 
   useEffect(() => {
     (async () => {
@@ -121,7 +124,7 @@ export function Chromecast({
         className='mr-2'
         background={false}
         onPress={() => {
-          if (mediaStatus?.currentItemId) CastContext.showExpandedControls();
+          if (mediaStatus?.currentItemId) router.push('/player/google-cast-player');
           else CastContext.showCastDialog();
         }}
         {...props}
@@ -135,7 +138,7 @@ export function Chromecast({
     <RoundButton
       size='large'
       onPress={() => {
-        if (mediaStatus?.currentItemId) CastContext.showExpandedControls();
+        if (mediaStatus?.currentItemId) router.push('/player/google-cast-player');
         else CastContext.showCastDialog();
       }}
       {...props}
