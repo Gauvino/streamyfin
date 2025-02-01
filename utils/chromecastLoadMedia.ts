@@ -6,12 +6,16 @@ export function chromecastLoadMedia({
   client,
   item,
   contentUrl,
+  sessionId,
+  mediaSourceId,
   images,
   playbackOptions,
 }: {
   client: RemoteMediaClient;
   item: BaseItemDto;
   contentUrl: string;
+  sessionId?: string;
+  mediaSourceId?: string;
   images: WebImage[];
   playbackOptions: SelectedOptions;
 }) {
@@ -23,6 +27,8 @@ export function chromecastLoadMedia({
       customData: {
         item,
         playbackOptions,
+        sessionId,
+        mediaSourceId,
       },
       metadata:
         item.Type === "Episode"
