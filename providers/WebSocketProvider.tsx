@@ -96,7 +96,9 @@ export const WebSocketProvider = ({ children }: WebSocketProviderProps) => {
     newWebSocket.onmessage = (e) => {
       try {
         const message = JSON.parse(e.data);
-        console.log("[WS] Received message:", message);
+        // Sanitize output to avoid log injection
+        const msgStr = JSON.stringify(message).replaceAll(/[\n\r]/g, " ");
+        console.log("[WS] Received message: %s", msgStr);
         setLastMessage(message); // Store the last message in context
       } catch (error) {
         console.error("Error parsing WebSocket message:", error);

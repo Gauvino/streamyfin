@@ -96,7 +96,9 @@ export const useWebSocket = ({
       | Record<string, string>
       | undefined; // Arguments are Dictionary<string, string>
 
-    console.log("[WS] ~ ", lastMessage);
+    // Sanitize output to avoid log injection
+    const msgStr = JSON.stringify(lastMessage).replaceAll(/[\n\r]/g, " ");
+    console.log("[WS] ~ %s", msgStr);
 
     if (command === "PlayPause") {
       console.log("Command ~ PlayPause");
