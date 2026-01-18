@@ -83,7 +83,7 @@ export default function ChromecastControls({
   const api = useAtomValue(apiAtom);
   const user = useAtomValue(userAtom);
 
-  const [settings] = useSettings();
+  const { settings } = useSettings();
 
   const [currentTime, setCurrentTime] = useState(0);
   const [remainingTime, setRemainingTime] = useState(Infinity);
