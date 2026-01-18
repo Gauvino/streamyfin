@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState, useRef } from "react";
 import { View } from "react-native";
 import { Text } from "@/components/common/Text";
 import { Loader } from "@/components/Loader";
@@ -32,6 +32,19 @@ export default function Player() {
   const sessionManager = GoogleCast.getSessionManager();
   const discoveryManager = GoogleCast.getDiscoveryManager();
   const mediaStatus = useMediaStatus();
+
+  const [wasMediaPlaying, setWasMediaPlaying] = useState(false);
+  const reportPlaybackStopedRef = useRef(() => {});
+
+  useEffect(() => {
+    if (mediaStatus) return; // media currently playing
+
+    // media was just playing, report playback stopped
+    if (wasMediaPlaying) {
+      reportPlaybackStopedRef.current();
+      setWasMediaPlaying(false);
+    }
+  }, [mediaStatus, wasMediaPlaying]);
 
   const router = useRouter();
 
@@ -76,7 +89,14 @@ export default function Player() {
 
   const ChromecastControlsMemoized = useMemo(() => {
     if (!mediaStatus || !client) return undefined;
-    return <ChromecastControls mediaStatus={mediaStatus} client={client} />;
+    return (
+      <ChromecastControls
+        mediaStatus={mediaStatus}
+        client={client}
+        setWasMediaPlaying={setWasMediaPlaying}
+        reportPlaybackStopedRef={reportPlaybackStopedRef}
+      />
+    );
   }, [mediaStatus, client]);
 
   if (
