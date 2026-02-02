@@ -305,8 +305,8 @@
         "select_liraries_you_want_to_hide": "Sélectionnez les bibliothèques que vous souhaitez masquer dans l'onglet Bibliothèque et les sections de la page d'accueil.",
         "disable_haptic_feedback": "Désactiver le retour haptique",
         "default_quality": "Qualité par défaut",
-        "default_playback_speed": "Default Playback Speed",
-        "auto_play_next_episode": "Auto-play Next Episode",
+        "default_playback_speed": "Vitesse de lecture par défaut",
+        "auto_play_next_episode": "Lecture automatique de l'épisode suivant",
         "max_auto_play_episode_count": "Nombre d'épisodes en lecture automatique max",
         "disabled": "Désactivé"
       },
@@ -314,15 +314,15 @@
         "downloads_title": "Téléchargements"
       },
       "music": {
-        "title": "Music",
-        "playback_title": "Playback",
-        "playback_description": "Configure how music is played.",
-        "prefer_downloaded": "Prefer Downloaded Songs",
-        "caching_title": "Caching",
-        "caching_description": "Automatically cache upcoming tracks for smoother playback.",
-        "lookahead_enabled": "Enable Look-Ahead Caching",
-        "lookahead_count": "Tracks to Pre-cache",
-        "max_cache_size": "Max Cache Size"
+        "title": "Musique",
+        "playback_title": "Lecture",
+        "playback_description": "Configurer le mode de lecture de la musique.",
+        "prefer_downloaded": "Supprimer toutes les musiques téléchargées",
+        "caching_title": "Mise en cache",
+        "caching_description": "Mettre automatiquement en cache les pistes à venir pour une lecture plus fluide.",
+        "lookahead_enabled": "Activer la mise en cache guidée",
+        "lookahead_count": "Pistes à pré-mettre en cache",
+        "max_cache_size": "Taille max de cache"
       },
       "plugins": {
         "plugins_title": "Plugins",
@@ -357,19 +357,19 @@
           "save_button": "Enregistrer",
           "toasts": {
             "saved": "Enregistré",
-            "refreshed": "Settings refreshed from server"
+            "refreshed": "Paramètres actualisés depuis le serveur"
           },
-          "refresh_from_server": "Refresh Settings from Server"
+          "refresh_from_server": "Rafraîchir les paramètres depuis le serveur"
         },
         "streamystats": {
-          "enable_streamystats": "Enable Streamystats",
-          "disable_streamystats": "Disable Streamystats",
-          "enable_search": "Use for Search",
+          "enable_streamystats": "Activer Streamystats",
+          "disable_streamystats": "Désactiver Streamystats",
+          "enable_search": "Utiliser pour la recherche",
           "url": "URL",
           "server_url_placeholder": "http(s)://streamystats.example.com",
-          "streamystats_search_hint": "Enter the URL for your Streamystats server. The URL should include http or https and optionally the port.",
-          "read_more_about_streamystats": "Read More About Streamystats.",
-          "save_button": "Save",
+          "streamystats_search_hint": "Entrez l'URL de votre serveur Streamystats. L'URL doit inclure http ou https et éventuellement le port.",
+          "read_more_about_streamystats": "En savoir plus sur Streamystats.",
+          "save_button": "Enregistrer",
           "save": "Enregistrer",
           "features_title": "Fonctionnalités",
           "home_sections_title": "Sections de la page d´accueil",
@@ -572,7 +572,7 @@
       "genres": "Genres",
       "years": "Années",
       "sort_by": "Trier par",
-      "filter_by": "Filter By",
+      "filter_by": "Filtrer par",
       "sort_order": "Ordre de tri",
       "tags": "Tags"
     }
@@ -719,25 +719,25 @@
     "favorites": "Favoris"
   },
   "music": {
-    "title": "Music",
+    "title": "Musique",
     "tabs": {
       "suggestions": "Suggestions",
       "albums": "Albums",
-      "artists": "Artists",
+      "artists": "Artistes",
       "playlists": "Playlists",
-      "tracks": "tracks"
+      "tracks": "morceaux"
     },
     "filters": {
-      "all": "All"
+      "all": "Toutes"
     },
-    "recently_added": "Recently Added",
-    "recently_played": "Recently Played",
-    "frequently_played": "Frequently Played",
-    "explore": "Explore",
-    "top_tracks": "Top Tracks",
-    "play": "Play",
-    "shuffle": "Shuffle",
-    "play_top_tracks": "Play Top Tracks",
+    "recently_added": "Ajoutés récemment",
+    "recently_played": "Récemment joué",
+    "frequently_played": "Fréquemment joué",
+    "explore": "Explorez",
+    "top_tracks": "Top chansons",
+    "play": "Lecture",
+    "shuffle": "Aléatoire",
+    "play_top_tracks": "Jouer les pistes les plus populaires",
     "no_suggestions": "No suggestions available",
     "no_albums": "No albums found",
     "no_artists": "No artists found",
